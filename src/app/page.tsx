@@ -9,8 +9,11 @@ export default function Home() {
     return (
 		<div className="min-h-screen p-8 font-[family-name:var(--font-geist-sans)]">
 			<Header />
+
 			<main className="">
 				<Hero title={pageTitle}/>
+
+                <p>An independent type foundry making fonts drawn from objects, environments and natural phenomena.</p>
 
                 <div className="grid gap-8 grid-rows-4 my-12">
                     <TypeCard

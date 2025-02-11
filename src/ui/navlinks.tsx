@@ -5,10 +5,6 @@ import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
 
 const links = [
-{
-        name: 'All Fonts',
-        href: '/all'
-    },
     {
         name: 'Custom Work',
         href: '/custom-work',
