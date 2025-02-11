@@ -9,7 +9,7 @@ export default function Hero({ title }: Hero) {
 
             <p>Type Foundry drawing from everyday phenomena</p>
 
-            <ul className="list">
+            {/* <ul className="list">
                 <li>
                     Bandsaw is a rectilinear sans serif inspired by industrial machinery. Features at the cap height and baseline resemble the teeth of saw blades.
                 </li>
@@ -25,14 +25,14 @@ export default function Hero({ title }: Hero) {
                 <li>
                     Widescreen
                 </li>
-            </ul>
+            </ul> */}
 
-            turn on/off hidden characters:
+            {/* turn on/off hidden characters:
 
             tab »
             paragraph return ¶
             forced line break¬
-            end of story #
+            end of story # */}
         </div>
     );
 }
