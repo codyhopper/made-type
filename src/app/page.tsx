@@ -15,7 +15,7 @@ export default function Home() {
 
                 <p>An independent type foundry making fonts drawn from objects, environments and natural phenomena.</p>
 
-                <div className="grid gap-8 grid-rows-4 my-12">
+                <div className="grid gap-8 md:gap-16 grid-rows-4 my-12">
                     <TypeCard
                         title="Bandsaw"
                         sample="Crude Shops Build Magnificent Results"
