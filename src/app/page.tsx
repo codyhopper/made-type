@@ -15,11 +15,17 @@ export default function Home() {
 
                 <p>An independent type foundry making fonts drawn from objects, environments and natural phenomena.</p>
 
-                <div className="grid gap-8 md:gap-16 grid-rows-4 my-12">
+                <div className="grid gap-8 md:gap-16 md:grid-rows-4 my-12">
                     <TypeCard
                         title="Bandsaw"
-                        sample="Crude Shops Build Magnificent Results"
-                        description="Bandsaw is a rectilinear sans serif inspired by industrial machinery. Features at the cap height and baseline resemble the teeth of saw blades."
+                        sample="Crude Shops Work Magnificent Results"
+                        description="Bandsaw is a rectilinear sans-serif inspired by industrial machinery. Features at the cap height and baseline resemble the teeth of saw blades."
+                    />
+                    <TypeCard
+                        title="Modal"
+                        underConstruction={true}
+                        sample="Anomalous Signal Decrypted"
+                        description="Modal is a monospace sans serif inspired by pull-tabs found on food packaging. Each letterform utilizes a single, non-intersecting stroke within a 4x4 grid."
                     />
                     <TypeCard
                         title="Rivet"
@@ -32,12 +38,6 @@ export default function Home() {
                         underConstruction={true}
                         sample="flashback unlocked"
                         description="Widescreen is a modular sans serif inspired by the vernacular of digital screens; each letterform uses a ratio of 16:9."
-                    />
-                    <TypeCard
-                        title="Modal"
-                        underConstruction={true}
-                        sample="Anomalous Signal Decrypted"
-                        description="Modal is a monospace sans serif inspired by pull-tabs found on food packaging. Each letterform utilizes a single, non-intersecting stroke within a 4x4 grid."
                     />
                 </div>
 			</main>
