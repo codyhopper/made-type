@@ -13,7 +13,7 @@ export default function Home() {
 			<main className="">
 				<Hero title={pageTitle}/>
 
-                <p>An independent type foundry making fonts drawn from objects, environments and natural phenomena.</p>
+                <p>An independent type foundry making fonts drawn from objects, environments, and natural phenomena.</p>
 
                 <div className="grid gap-8 md:gap-16 md:grid-rows-4 my-12">
                     <TypeCard

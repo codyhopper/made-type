@@ -24,8 +24,10 @@ export default function Card({ title, underConstruction, sample, description }: 
 
     return (
         <div className={clsx(
-            "relative rounded-xl bg-black before:rounded-xl hover:shadow-md focus-within:shadow-md hover:shadow-zinc-500 transition-shadow",
-            { "before:absolute before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:w-[calc(100%+1rem)] before:h-[calc(100%+1rem)] before:bg-[repeating-linear-gradient(-45deg,_theme('colors.yellow.600'),_theme('colors.yellow.500')_1.618rem,_theme('colors.yellow.800')_1rem,_theme('colors.yellow.700')_2.618rem)]": underConstruction === true }
+            "relative rounded-xl bg-black before:rounded-xl hover:shadow-md focus-within:shadow-md hover:shadow-zinc-500 transition-shadow group/card",
+            {
+                "before:absolute before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:w-[calc(100%+1rem)] before:h-[calc(100%+1rem)] before:bg-[repeating-linear-gradient(-45deg,_theme('colors.yellow.600'),_theme('colors.yellow.500')_1.618rem,_theme('colors.zinc.800')_1rem,_theme('colors.zinc.700')_2.618rem)] before:bg-[top_left] motion-safe:hover:before:bg-[top_left_1rem] before:transition-[background-position] before:duration-[1s] before:hover:duration-300 will-change-[background-position]": underConstruction === true
+            }
         )}>
             <div className="relative flex flex-col md:flex-row min-h-full gap-2 md:gap-8 bg-black rounded-lg">
                 {/* sample area */}
@@ -48,8 +50,8 @@ export default function Card({ title, underConstruction, sample, description }: 
 
                     { underConstruction && (
                         <div className="h-full flex flex-col justify-end items-end pr-3 pb-3">
-                            <div className="mt-auto w-fit bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full px-2 py-1 border-2 border-yellow-600 shadow-md shadow-yellow-800">
-                                <span className="font-bold">Under Construction</span>
+                            <div className="mt-auto w-fit bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full px-2 py-1 border-2 border-yellow-600 shadow-md shadow-yellow-800 hover:shadow-sm transition-shadow">
+                                <span className="font-bold pointer-events-none">Under Construction</span>
                             </div>
                         </div>
                     )}
