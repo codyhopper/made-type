@@ -22,16 +22,17 @@ export default function Card({ title, underConstruction, sample, description }: 
 
     return (
         <div className={clsx(
-            "h-full relative rounded-xl bg-black before:rounded-xl hover:shadow-md focus-within:shadow-md hover:shadow-zinc-500 transition-shadow group/card",
+            "h-full relative rounded-xl bg-black border-transparent border-px hover:shadow-md focus-within:shadow-md transition-shadow group/card before:absolute before:rounded-xl before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:w-[calc(100%+1rem)] before:h-[calc(100%+1rem)] before:transition-[opacity,background-position] before:will-change-[opacity,background-position]",
             {
-                "before:absolute before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:w-[calc(100%+1rem)] before:h-[calc(100%+1rem)] before:bg-[repeating-linear-gradient(-45deg,_theme('colors.yellow.600'),_theme('colors.yellow.500')_1.618rem,_theme('colors.zinc.800')_1rem,_theme('colors.zinc.700')_2.618rem)] before:bg-[top_left] motion-safe:hover:before:bg-[top_left_1rem] motion-safe:focus-within:before:bg-[top_left_1rem]  before:transition-[background-position] before:duration-[1s] hover:before:duration-300 will-change-[background-position]": underConstruction === true
+                "before:bg-[repeating-linear-gradient(-45deg,_theme('colors.yellow.600'),_theme('colors.yellow.500')_1.618rem,_theme('colors.zinc.800')_1rem,_theme('colors.zinc.700')_2.618rem)] before:bg-[top_left] motion-safe:hover:before:bg-[top_left_1rem] motion-safe:focus-within:before:bg-[top_left_1rem] before:duration-[1s] hover:before:duration-300": underConstruction === true,
+                "before:bg-gradient-to-br before:bg-[size:100%_200%] before:bg-[position:top] hover:before:from-zinc-700 hover:before:via-white hover:before:to-zinc-800  focus-within:before:from-zinc-600 focus-within:before:to-zinc-950 focus-within:before:bg-[position:bottom]": underConstruction !== true,
             }
         )}>
             <div className="relative flex flex-col md:flex-row min-h-full gap-2 md:gap-8 bg-black rounded-lg">
                 {/* sample area */}
                 <textarea
                     className={clsx(
-                        `relative block bg-zinc-900 rounded-xl w-full md:w-2/3 p-4 ${fontName.className}`,
+                        `relative block bg-zinc-900 rounded-l-lg rounded-r-xl w-full md:w-2/3 p-4 ${fontName.className}`,
                         { 'text-7xl md:text-9xl': title === 'Bandsaw' || title === 'Rivet' },
                         { 'text-3xl md:text-7xl': title === 'Widescreen' || title === 'Modal' },
                     )}
@@ -45,7 +46,6 @@ export default function Card({ title, underConstruction, sample, description }: 
                     <p className="pr-4">{description}</p>
 
                     {/* flags */}
-
                     { underConstruction && (
                         <div className="h-full flex flex-col justify-end items-end pr-3 pb-3">
                             <div className="mt-auto w-fit bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full px-2 py-1 border-2 border-yellow-600 shadow-md shadow-yellow-800 hover:shadow-sm transition-shadow">
