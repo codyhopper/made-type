@@ -1,10 +1,14 @@
 import clsx from 'clsx';
-import { RivetFont } from 'lib/custom-fonts'
-import { WidescreenFont } from 'lib/custom-fonts'
-import { ModalFont } from 'lib/custom-fonts'
-import { BandsawFont } from 'lib/custom-fonts'
+import { RivetFont, WidescreenFont, ModalFont, BandsawFont } from 'lib/custom-fonts';
 
-type FontName = 'Rivet' | 'Widescreen' | 'Modal' | 'Bandsaw';
+const fonts = {
+    Rivet: RivetFont,
+    Widescreen: WidescreenFont,
+    Modal: ModalFont,
+    Bandsaw: BandsawFont,
+};
+
+type FontName = keyof typeof fonts;
 
 interface Card {
     title: FontName;
@@ -14,19 +18,13 @@ interface Card {
 }
 
 export default function Card({ title, underConstruction, sample, description }: Card) {
-    const fonts = {
-        Rivet: RivetFont,
-        Widescreen: WidescreenFont,
-        Modal: ModalFont,
-        Bandsaw: BandsawFont,
-    };
     const fontName = fonts[title];
 
     return (
         <div className={clsx(
-            "relative rounded-xl bg-black before:rounded-xl hover:shadow-md focus-within:shadow-md hover:shadow-zinc-500 transition-shadow group/card",
+            "h-full relative rounded-xl bg-black before:rounded-xl hover:shadow-md focus-within:shadow-md hover:shadow-zinc-500 transition-shadow group/card",
             {
-                "before:absolute before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:w-[calc(100%+1rem)] before:h-[calc(100%+1rem)] before:bg-[repeating-linear-gradient(-45deg,_theme('colors.yellow.600'),_theme('colors.yellow.500')_1.618rem,_theme('colors.zinc.800')_1rem,_theme('colors.zinc.700')_2.618rem)] before:bg-[top_left] motion-safe:hover:before:bg-[top_left_1rem] before:transition-[background-position] before:duration-[1s] before:hover:duration-300 will-change-[background-position]": underConstruction === true
+                "before:absolute before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:w-[calc(100%+1rem)] before:h-[calc(100%+1rem)] before:bg-[repeating-linear-gradient(-45deg,_theme('colors.yellow.600'),_theme('colors.yellow.500')_1.618rem,_theme('colors.zinc.800')_1rem,_theme('colors.zinc.700')_2.618rem)] before:bg-[top_left] motion-safe:hover:before:bg-[top_left_1rem] motion-safe:focus-within:before:bg-[top_left_1rem]  before:transition-[background-position] before:duration-[1s] hover:before:duration-300 will-change-[background-position]": underConstruction === true
             }
         )}>
             <div className="relative flex flex-col md:flex-row min-h-full gap-2 md:gap-8 bg-black rounded-lg">
