@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import { RivetFont, WidescreenFont, ModalFont, BandsawFont } from 'lib/custom-fonts';
+import { PencilIcon } from '@heroicons/react/24/solid';
 
 const fonts = {
     Rivet: RivetFont,
@@ -22,7 +23,7 @@ export default function Card({ title, underConstruction, sample, description }: 
 
     return (
         <div className={clsx(
-            "h-full relative rounded-xl bg-black border-transparent border-px hover:shadow-md focus-within:shadow-md transition-shadow group/card before:absolute before:rounded-xl before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:w-[calc(100%+1rem)] before:h-[calc(100%+1rem)] before:transition-[opacity,background-position] before:will-change-[opacity,background-position] before:duration-300 hover:before:duration-600 focus-within:before:duration-600",
+            "h-full relative rounded-xl bg-black border-transparent border-px group/card before:absolute before:rounded-xl before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:w-[calc(100%+1rem)] before:h-[calc(100%+1rem)] before:transition-[opacity,background-position] before:will-change-[opacity,background-position] before:duration-300 hover:before:duration-600 focus-within:before:duration-600",
             {
                 "before:bg-[repeating-linear-gradient(-45deg,_theme('colors.yellow.600'),_theme('colors.yellow.500')_1.618rem,_theme('colors.zinc.800')_1rem,_theme('colors.zinc.700')_2.618rem)] before:bg-[top_left] motion-safe:hover:before:bg-[top_left_1rem] motion-safe:focus-within:before:bg-[top_left_1rem]": underConstruction === true,
                 "before:opacity-10 before:bg-gradient-to-br before:bg-[size:100%_200%] before:bg-[position:top] before:from-zinc-600 before:via-white before:to-zinc-800 hover:before:opacity-100 focus-within:before:bg-[position:bottom] ": underConstruction !== true,
@@ -30,15 +31,23 @@ export default function Card({ title, underConstruction, sample, description }: 
         )}>
             <div className="relative flex flex-col md:flex-row min-h-full gap-2 md:gap-8 bg-black rounded-lg">
                 {/* sample area */}
-                <textarea
-                    className={clsx(
-                        `relative block bg-zinc-900 rounded-l-lg rounded-r-xl w-full md:w-2/3 p-4 ${fontName.className}`,
-                        { 'text-7xl md:text-9xl': title === 'Bandsaw' || title === 'Rivet' },
-                        { 'text-3xl md:text-7xl': title === 'Widescreen' || title === 'Modal' },
-                    )}
-                    style={{ resize: 'none' }}
-                    defaultValue={sample}
-                ></textarea>
+                <div className="relative block w-full md:w-2/3 bg-zinc-900 rounded-l-lg rounded-r-xl ">
+                    <textarea
+                        className={clsx(
+                            `relative block w-full h-full rounded-l-lg rounded-r-xl p-4 peer ${fontName.className}`,
+                            { 'text-7xl md:text-9xl': title === 'Bandsaw' || title === 'Rivet' },
+                            { 'text-3xl md:text-7xl': title === 'Widescreen' || title === 'Modal' },
+                        )}
+                        style={{ resize: 'none' }}
+                        defaultValue={sample}
+                    ></textarea>
+
+                    {/* editable */}
+                    <div className="absolute right-2 bottom-2 flex items-center gap-1 pointer-events-none group/edit text-zinc-400 peer-focus-within:opacity-0 transition-opacity">
+                        <PencilIcon className="size-4" />
+                        <div className="opacity-0 transition-all group-hover/card:opacity-100 group-hover/card:w-[6ch] w-0 overflow-hidden">Editable</div>
+                    </div>
+                </div>
 
                 {/* descriptive content */}
                 <div className={`relative flex flex-col gap-3 md:basis-1/3 m-3 md:m-4 bg-black`}>
@@ -54,7 +63,6 @@ export default function Card({ title, underConstruction, sample, description }: 
                         </div>
                     )}
                 </div>
-
             </div>
         </div>
     );
