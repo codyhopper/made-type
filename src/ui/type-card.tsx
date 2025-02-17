@@ -1,6 +1,10 @@
+"use client";
+
 import clsx from 'clsx';
+import FontSlider from '../ui/font-slider';
 import { RivetFont, WidescreenFont, ModalFont, BandsawFont } from 'lib/custom-fonts';
 import { PencilIcon } from '@heroicons/react/24/solid';
+import { useState } from "react";
 
 const fonts = {
     Rivet: RivetFont,
@@ -20,6 +24,7 @@ interface Card {
 
 export default function Card({ title, underConstruction, sample, description }: Card) {
     const fontName = fonts[title];
+    const [fontSize, setFontSize] = useState(54)
 
     return (
         <div className={clsx(
@@ -29,24 +34,26 @@ export default function Card({ title, underConstruction, sample, description }: 
                 "before:opacity-10 before:bg-gradient-to-br before:bg-[position:top] before:from-zinc-300 before:via-zinc-200 before:to-zinc-500 dark:before:from-zinc-600 dark:before:via-zinc-400 dark:before:to-zinc-800 hover:before:opacity-100 focus-within:before:bg-[position:bottom] ": underConstruction !== true,
             }
         )}>
-            <div className="relative flex flex-col md:flex-row min-h-full gap-2 md:gap-8 bg-zinc-300 dark:bg-black rounded-lg">
+            <div className="relative flex flex-col md:flex-row h-full max-h-full gap-2 md:gap-8 bg-zinc-300 dark:bg-black rounded-lg">
                 {/* sample area */}
-                <div className="relative block w-full md:w-2/3 bg-zinc-300 dark:bg-zinc-950 rounded-l-lg rounded-r-xl ">
+                <div className="relative block w-full md:w-2/3 max-h-full bg-zinc-300 dark:bg-zinc-950 rounded-l-lg rounded-r-xl ">
                     <textarea
                         className={clsx(
-                            `relative block w-full h-full rounded-l-lg rounded-r-xl p-4 bg-zinc-200 dark:bg-zinc-950 peer ${fontName.className}`,
+                            `relative block w-full h-full max-h-full rounded-l-lg rounded-r-xl p-4 bg-zinc-200 dark:bg-zinc-950 peer ${fontName.className}`,
                             { 'text-7xl md:text-9xl': title === 'Bandsaw' || title === 'Rivet' },
                             { 'text-3xl md:text-7xl': title === 'Widescreen' || title === 'Modal' },
                         )}
-                        style={{ resize: 'none' }}
+                        style={{ resize: 'none', fontSize: `${fontSize}px` }}
                         defaultValue={sample}
                     ></textarea>
 
                     {/* editable */}
-                    <div className="absolute right-2 bottom-2 flex items-center gap-1 pointer-events-none group/edit text-zinc-400 peer-focus-within:opacity-0 transition-opacity">
+                    <div className="absolute right-3 bottom-3 flex items-center gap-1 pointer-events-none group/edit text-zinc-400 peer-focus-within:opacity-0 transition-opacity">
                         <PencilIcon className="size-4" />
                         <div className="opacity-0 transition-all group-hover/card:opacity-100 group-hover/card:w-[6ch] w-0 overflow-hidden">Editable</div>
                     </div>
+
+                    <FontSlider fontSize={fontSize} onFontSizeChange={setFontSize}/>
                 </div>
 
                 {/* descriptive content */}
