@@ -1,8 +1,11 @@
+// 'use client';
+
 import Header from "ui/header";
 import Footer from "ui/footer";
 import Hero from "ui/hero";
 import TypeCard from "ui/type-card";
 import FadeInSection from "ui/fade-section";
+// import { useEffect } from "react";
 
 export default function Home() {
     const pageTitle = 'made⎯type'

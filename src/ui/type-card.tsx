@@ -23,18 +23,18 @@ export default function Card({ title, underConstruction, sample, description }: 
 
     return (
         <div className={clsx(
-            "h-full relative rounded-xl bg-black border-transparent border-px group/card before:absolute before:rounded-xl before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:w-[calc(100%+1rem)] before:h-[calc(100%+1rem)] before:transition-[opacity,background-position] before:will-change-[opacity,background-position] before:duration-300 hover:before:duration-600 focus-within:before:duration-600",
+            "h-full relative rounded-xl border-transparent border-px group/card before:absolute before:rounded-xl before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:w-[calc(100%+1rem)] before:h-[calc(100%+1rem)] before:transition-[opacity,background-position] before:bg-[size:100%_200%] before:will-change-[opacity,background-position] before:duration-300 hover:before:duration-600 focus-within:before:duration-600",
             {
-                "before:bg-[repeating-linear-gradient(-45deg,_theme('colors.yellow.600'),_theme('colors.yellow.500')_1.618rem,_theme('colors.zinc.800')_1rem,_theme('colors.zinc.700')_2.618rem)] before:bg-[top_left] motion-safe:hover:before:bg-[top_left_1rem] motion-safe:focus-within:before:bg-[top_left_1rem]": underConstruction === true,
-                "before:opacity-10 before:bg-gradient-to-br before:bg-[size:100%_200%] before:bg-[position:top] before:from-zinc-600 before:via-white before:to-zinc-800 hover:before:opacity-100 focus-within:before:bg-[position:bottom] ": underConstruction !== true,
+                "before:bg-[repeating-linear-gradient(-45deg,_theme('colors.yellow.500'),_theme('colors.yellow.400')_1.618rem,_theme('colors.zinc.400')_1rem,_theme('colors.zinc.300')_2.618rem)] dark:before:bg-[repeating-linear-gradient(-45deg,_theme('colors.yellow.600'),_theme('colors.yellow.500')_1.618rem,_theme('colors.zinc.800')_1rem,_theme('colors.zinc.700')_2.618rem)] before:bg-[top_left] motion-safe:hover:before:bg-[top_left_1rem] motion-safe:focus-within:before:bg-[top_left_1rem]": underConstruction === true,
+                "before:opacity-10 before:bg-gradient-to-br before:bg-[position:top] before:from-zinc-300 before:via-zinc-200 before:to-zinc-500 dark:before:from-zinc-600 dark:before:via-zinc-400 dark:before:to-zinc-800 hover:before:opacity-100 focus-within:before:bg-[position:bottom] ": underConstruction !== true,
             }
         )}>
-            <div className="relative flex flex-col md:flex-row min-h-full gap-2 md:gap-8 bg-black rounded-lg">
+            <div className="relative flex flex-col md:flex-row min-h-full gap-2 md:gap-8 bg-zinc-300 dark:bg-black rounded-lg">
                 {/* sample area */}
-                <div className="relative block w-full md:w-2/3 bg-zinc-900 rounded-l-lg rounded-r-xl ">
+                <div className="relative block w-full md:w-2/3 bg-zinc-300 dark:bg-zinc-950 rounded-l-lg rounded-r-xl ">
                     <textarea
                         className={clsx(
-                            `relative block w-full h-full rounded-l-lg rounded-r-xl p-4 peer ${fontName.className}`,
+                            `relative block w-full h-full rounded-l-lg rounded-r-xl p-4 bg-zinc-200 dark:bg-zinc-950 peer ${fontName.className}`,
                             { 'text-7xl md:text-9xl': title === 'Bandsaw' || title === 'Rivet' },
                             { 'text-3xl md:text-7xl': title === 'Widescreen' || title === 'Modal' },
                         )}
@@ -50,15 +50,15 @@ export default function Card({ title, underConstruction, sample, description }: 
                 </div>
 
                 {/* descriptive content */}
-                <div className={`relative flex flex-col gap-3 md:basis-1/3 m-3 md:m-4 bg-black`}>
+                <div className={`relative flex flex-col gap-3 md:basis-1/3 m-3 md:m-4`}>
                     <h2 className="text-2xl">{title}</h2>
                     <p className="pr-4">{description}</p>
 
                     {/* flags */}
                     { underConstruction && (
                         <div className="h-full flex flex-col justify-end items-end pr-3 pb-3">
-                            <div className="mt-auto w-fit bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full px-2 py-1 border-2 border-yellow-600 shadow-md shadow-yellow-800 hover:shadow-sm transition-shadow">
-                                <span className="font-bold pointer-events-none">Under Construction</span>
+                            <div className="mt-auto w-fit rounded-full px-2 py-1 border-2 border-yellow-400 dark:border-yellow-600 bg-gradient-to-br from-yellow-300 dark:from-yellow-500 to-yellow-500 dark:to-yellow-600 shadow-md shadow-yellow-500 dark:shadow-yellow-800 hover:shadow-sm transition-shadow">
+                                <span className="font-bold pointer-events-none text-zinc-600 dark:text-zinc-950 ">Under Construction</span>
                             </div>
                         </div>
                     )}

@@ -2,17 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: theme('colors.white');
-  --foreground: theme('colors.zinc.800');
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: theme('colors.zinc.950');
-    --foreground: theme('colors.zinc.100');
-  }
-}
 
 body {
   color: var(--foreground);

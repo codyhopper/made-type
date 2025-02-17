@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import ThemeToggle from '../ui/theme-toggle';
 import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
 
@@ -42,6 +43,7 @@ export default function Navlinks() {
                     );
                 })}
             </ul>
+            <ThemeToggle />
         </nav>
     );
 }
