@@ -22,10 +22,10 @@ export default function Card({ title, underConstruction, sample, description }: 
 
     return (
         <div className={clsx(
-            "h-full relative rounded-xl bg-black border-transparent border-px hover:shadow-md focus-within:shadow-md transition-shadow group/card before:absolute before:rounded-xl before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:w-[calc(100%+1rem)] before:h-[calc(100%+1rem)] before:transition-[opacity,background-position] before:will-change-[opacity,background-position]",
+            "h-full relative rounded-xl bg-black border-transparent border-px hover:shadow-md focus-within:shadow-md transition-shadow group/card before:absolute before:rounded-xl before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 before:w-[calc(100%+1rem)] before:h-[calc(100%+1rem)] before:transition-[opacity,background-position] before:will-change-[opacity,background-position] before:duration-300 hover:before:duration-600 focus-within:before:duration-600",
             {
-                "before:bg-[repeating-linear-gradient(-45deg,_theme('colors.yellow.600'),_theme('colors.yellow.500')_1.618rem,_theme('colors.zinc.800')_1rem,_theme('colors.zinc.700')_2.618rem)] before:bg-[top_left] motion-safe:hover:before:bg-[top_left_1rem] motion-safe:focus-within:before:bg-[top_left_1rem] before:duration-[1s] hover:before:duration-300": underConstruction === true,
-                "before:bg-gradient-to-br before:bg-[size:100%_200%] before:bg-[position:top] hover:before:from-zinc-700 hover:before:via-white hover:before:to-zinc-800  focus-within:before:from-zinc-600 focus-within:before:to-zinc-950 focus-within:before:bg-[position:bottom]": underConstruction !== true,
+                "before:bg-[repeating-linear-gradient(-45deg,_theme('colors.yellow.600'),_theme('colors.yellow.500')_1.618rem,_theme('colors.zinc.800')_1rem,_theme('colors.zinc.700')_2.618rem)] before:bg-[top_left] motion-safe:hover:before:bg-[top_left_1rem] motion-safe:focus-within:before:bg-[top_left_1rem]": underConstruction === true,
+                "before:opacity-10 before:bg-gradient-to-br before:bg-[size:100%_200%] before:bg-[position:top] before:from-zinc-600 before:via-white before:to-zinc-800 hover:before:opacity-100 focus-within:before:bg-[position:bottom] ": underConstruction !== true,
             }
         )}>
             <div className="relative flex flex-col md:flex-row min-h-full gap-2 md:gap-8 bg-black rounded-lg">
