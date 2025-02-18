@@ -6,9 +6,8 @@ interface FontSliderProps {
 }
 
 export default function FontSlider({ fontSize, onFontSizeChange }: FontSliderProps) {
-
     return (
-        <div className="absolute left-3 bottom-3 opacity-0 transition-opacity group-hover/card:opacity-100">
+        <div className="absolute left-3 bottom-3 opacity-0 transition-opacity motion-safe:group-hover/card:opacity-100 motion-safe:group-focus-within/card:opacity-100">
             <div className="flex items-center gap-2">
                 <label htmlFor="fontSize" className="">Size</label>
                 <input
