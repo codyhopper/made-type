@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# made—type
 
-## Getting Started
+**made—type** is an independent type foundry creating typefaces inspired by objects, environments, and natural phenomena—including pull-tabs, digital screens, and the bone structure of the human body.
 
-First, run the development server:
+This repository serves as the home for the Made—Type website, a showcase for free typefaces and custom type design services.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## project
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The made—type website is a minimal, high-performance site built with:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **React.js & Next.js** – for a fast, server-rendered experience
+- **Tailwind CSS** – for scalable, utility-first styling
+- **Vercel** – for seamless deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## features
 
-## Learn More
+- free typefaces available for download
+- simple stand-up site for select typefaces
+- interactive elements and direct user engagement
 
-To learn more about Next.js, take a look at the following resources:
+## future roadmap
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## collaborate
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+made—type is open for creating custom typefaces that elevate your brand and bring your vision to life.
+Let’s create phenomena together.
